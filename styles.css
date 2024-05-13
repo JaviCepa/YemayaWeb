@@ -2,6 +2,7 @@ html {
     height: 100%;
     background: url('background.webp') no-repeat center center fixed;
     background-size: cover;
+    height: -webkit-fill-available;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
+    min-height: -webkit-fill-available;
 }
 
 header, main, footer {
