@@ -1,58 +1,33 @@
-html {
+html, body {
     height: 100%;
-    background: url('background.webp') no-repeat center center fixed;
-    background-size: cover;
-    height: -webkit-fill-available;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
+    background: url('background.webp') no-repeat center center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
-    min-height: -webkit-fill-available;
 }
 
-header, main, footer {
+.container-fluid {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    color: #fff;
-}
-
-.logo {
     max-width: 100%;
-    height: 15vh;
+    padding: 0;
+    margin: 0 auto;
 }
-
- .slogan {
-    max-width: 100%;
-    height: 7vh;
-}    
 
 .video-wrapper {
     position: relative;
     width: 70%;
-    height: 50vh;
-    max-width: 800px;
-    overflow: hidden;
-    /*border-radius: 20px;*/
-    /*box-shadow: 0 0 20px rgba(255, 255, 255, 0.75);*/
+    max-width: 800px; /* Limita el tamaño máximo del video */
+    aspect-ratio: 16 / 9; /* Mantiene la proporción del video */
+    margin: auto;
+    border-radius: 30px;
 }
 
 .video {
     width: 100%;
-    height: 100%;
-    max-width: 800px;
-    border-radius: 20px;
-    position: relative;
-    z-index: 1;
+    height: auto;
+    border-radius: 30px;
 }
 
 .play-button {
@@ -62,20 +37,20 @@ header, main, footer {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.01); /* Hace el botón de play más visible */
 }
 
 .play-button::before {
     content: '';
     display: block;
-    width: 128px;
-    height: 128px;
+    width: 50px; /* Tamaño adecuado para el ícono */
+    height: 50px;
     background: url('play-icon.png') no-repeat center center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .play-button.hide-icon::before {
@@ -83,37 +58,18 @@ header, main, footer {
 }
 
 .instagram-button {
-    padding: 20px 40px;
-    background: linear-gradient(135deg, #FF007F, #7F00FF);
+    padding: 15px 50px; /* Aumentamos el padding para hacer el botón más grande */
+    font-size: 20px; /* Aumentamos la fuente para mejorar la legibilidad */
+    background: linear-gradient(135deg, #FF5733, #FFC300); /* Gradiente de naranja a amarillo */
     color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: box-shadow 0.3s ease;
+    border-radius: 15px; /* Borde más redondeado */
+    border: none; /* Eliminamos el borde para un look más moderno */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Agregamos una transición suave */
+    text-transform: uppercase; /* Texto en mayúsculas para más impacto */
 }
 
 .instagram-button:hover {
-    box-shadow: 0 0 20px 2px rgba(255, 105, 180, 0.75);
-    background-color: #0077b5;
-}
-
-/* Media Queries para dispositivos móviles */
-@media (max-width: 800px) {
-    .logo {
-        height: 12vh; /* Menor tamaño para el logo */
-    }
-
-    .slogan {
-        padding: 10px; /* Añade padding para evitar que se pegue a los bordes */
-    }
-
-    .video-wrapper {
-        width: 95%; /* Aumenta el ancho en dispositivos más pequeños */
-        max-width: none;
-    }
-
-    .instagram-button {
-        font-size: 16px; /* Reduce un poco el tamaño de fuente en dispositivos móviles */
-        padding: 20px 40px; /* Menor padding para ocupar menos espacio */
-    }
+    box-shadow: 0 0 25px 3px rgba(255, 140, 0, 0.8); /* Sombra más prominente y colorida al pasar el ratón */
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón */
+    background: linear-gradient(135deg, #FFC300, #FF5733); /* Invertimos el gradiente para el efecto hover */
 }

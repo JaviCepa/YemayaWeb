@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yemayá - La mejor fiesta de bachata</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Yemayá" class="logo">
-        <img src="slogan.png" alt="La mejor fiesta de la bachata" class="slogan">
-    </header>
-    <main>
-        <div class="video-wrapper">
-            <video loop src="video.mp4" class="video" id="videoElement"></video>
-            <div id="playButton" class="play-button"></div>
-        </div>
-    </main>
-    <footer>
-        <a href="https://instagram.com/yemaya_dance" class="instagram-button" target="_blank">Únete a la próxima</a>
-    </footer>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100">
+        <header class="text-center mb-3">
+            <div class="logo mb-2">
+                <img src="logo.png" alt="Logo Yemayá" class="img-fluid" style="height: 15vh;">
+            </div>
+            <div class="slogan">
+                <img src="slogan.png" alt="La mejor fiesta de la bachata" class="img-fluid" style="height: 7vh;">
+            </div>
+        </header>
+        <main class="w-100 d-flex justify-content-center">
+            <div class="video-wrapper">
+                <video loop controls src="video.mp4" class="video" id="videoElement"></video>
+                <div id="playButton" class="play-button"></div>
+            </div>
+        </main>
+        <footer class="text-center mt-4">
+            <a href="https://instagram.com/yemaya_dance" class="btn btn-primary instagram-button" target="_blank">Únete a la próxima</a>
+        </footer>
+    </div>
     <script>
     document.getElementById('playButton').addEventListener('click', function() {
-    var video = document.getElementById('videoElement');
-    if (video.paused) {
-        video.play();
-        // Agrega la clase para ocultar el ícono de play
-        this.classList.add('hide-icon');
-    } else {
-        video.pause();
-        // Elimina la clase para mostrar el ícono de play
-        this.classList.remove('hide-icon');
-    }
+        var video = document.getElementById('videoElement');
+        if (video.paused) {
+            video.play();
+            this.classList.add('hide-icon');
+        } else {
+            video.pause();
+            this.classList.remove('hide-icon');
+        }
     });
     </script>
 </body>
