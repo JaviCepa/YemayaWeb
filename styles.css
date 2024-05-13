@@ -1,6 +1,6 @@
 html, body {
-    height: 100%;
-    min-height: 100vh;
+    overflow: hidden; /* Deshabilita el desplazamiento en la página */
+    height: 100%; /* Establece la altura al 100% para llenar la pantalla */
     margin: 0;
     padding: 0;
     background: url('background.webp') no-repeat center center fixed;
