@@ -21,19 +21,18 @@
         <a href="https://instagram.com/yemaya_dance" class="instagram-button" target="_blank">Únete a la próxima</a>
     </footer>
     <script>
-        document.getElementById('playButton').addEventListener('click', function() {
-        var video = document.getElementById('videoElement');
-        if (video.paused) {
-            video.play();
-            this.style.display = 'none'; // Oculta el botón play mientras el video está reproduciéndose
-        } else {
-            video.pause();
-            this.style.display = 'block'; // Muestra el botón play si el video está pausado
-        }
-        });
-
-        // Asegurarse de que los controles de video no se muestren
-        document.getElementById('videoElement').controls = false;
+    document.getElementById('playButton').addEventListener('click', function() {
+    var video = document.getElementById('videoElement');
+    if (video.paused) {
+        video.play();
+        // Agrega la clase para ocultar el ícono de play
+        this.classList.add('hide-icon');
+    } else {
+        video.pause();
+        // Elimina la clase para mostrar el ícono de play
+        this.classList.remove('hide-icon');
+    }
+    });
     </script>
 </body>
 </html>

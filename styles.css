@@ -71,6 +71,10 @@ header, main, footer {
     background-size: cover;
 }
 
+.play-button.hide-icon::before {
+    content: none; /* Elimina el ícono de play */
+}
+
 .instagram-button {
     padding: 15px 30px; /* Aumenta el tamaño del botón */
     background: linear-gradient(135deg, #FF007F, #7F00FF); /* Gradiente de rosa a morado */
