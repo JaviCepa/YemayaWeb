@@ -17,7 +17,7 @@ html, body {
 
 .video-wrapper {
     position: relative;
-    width: 70%;
+    width: 60%;
     max-width: 800px; /* Limita el tamaño máximo del video */
     aspect-ratio: 16 / 9; /* Mantiene la proporción del video */
     margin: auto;
@@ -93,6 +93,11 @@ html, body {
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
+    html, body {
+        height: 80vh;
+        min-height: 80vh;
+    }
+    
     .header {
         margin-bottom: 1rem; /* Reducimos el margen inferior en móviles */
     }
@@ -100,6 +105,10 @@ html, body {
     .logo {
         margin-top: 1rem; /* Reducimos el margen superior para el logo en móviles */
         height: 12vh; /* Ajustamos la altura para que no sea demasiado grande */
+    }
+    
+    .video-wrapper {
+        width: 90%;
     }
 
     .slogan {
