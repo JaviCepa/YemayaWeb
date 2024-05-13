@@ -41,14 +41,15 @@ html, body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.01); /* Hace el botón de play más visible */
+    background: rgba(0, 0, 0, 0.01);
 }
 
 .play-button::before {
     content: '';
     display: block;
-    width: 50px; /* Tamaño adecuado para el ícono */
-    height: 50px;
+    width: 20vw;
+    height: 20vw;
+    max-height: 128px;
     background: url('play-icon.png') no-repeat center center;
     background-size: contain;
 }
@@ -72,4 +73,41 @@ html, body {
     box-shadow: 0 0 25px 3px rgba(255, 140, 0, 0.8); /* Sombra más prominente y colorida al pasar el ratón */
     transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón */
     background: linear-gradient(135deg, #FFC300, #FF5733); /* Invertimos el gradiente para el efecto hover */
+}
+
+/* Estilos base para logo y encabezado */
+.header {
+    margin-bottom: 2rem; /* Espacio debajo del encabezado */
+}
+
+.logo {
+    margin-top: 2rem; /* Espacio arriba del logo */
+    height: 15vh;
+}
+
+.slogan {
+    height: 7vh;
+    width: auto;
+    margin-top: 1rem; /* Espacio arriba del eslogan */
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .header {
+        margin-bottom: 1rem; /* Reducimos el margen inferior en móviles */
+    }
+
+    .logo {
+        margin-top: 1rem; /* Reducimos el margen superior para el logo en móviles */
+        height: 12vh; /* Ajustamos la altura para que no sea demasiado grande */
+    }
+
+    .slogan {
+        margin-top: 0.5rem; /* Reducimos el espacio entre el logo y el eslogan */
+        height: 5vh; /* Ajustamos la altura del eslogan en móviles */
+    }
+
+    .container-fluid {
+        padding: 0; /* Eliminamos el padding del contenedor en móviles para maximizar el uso del espacio */
+    }
 }
