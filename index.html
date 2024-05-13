@@ -12,10 +12,28 @@
         <img src="slogan.png" alt="La mejor fiesta de la bachata" class="slogan">
     </header>
     <main>
-        <video autoplay muted loop src="video.mp4" class="video"></video>
+        <div class="video-wrapper">
+            <video loop src="video.mp4" class="video" id="videoElement"></video>
+            <div id="playButton" class="play-button"></div>
+        </div>
     </main>
     <footer>
         <a href="https://instagram.com/yemaya_dance" class="instagram-button" target="_blank">Únete a la próxima</a>
     </footer>
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+        var video = document.getElementById('videoElement');
+        if (video.paused) {
+            video.play();
+            this.style.display = 'none'; // Oculta el botón play mientras el video está reproduciéndose
+        } else {
+            video.pause();
+            this.style.display = 'block'; // Muestra el botón play si el video está pausado
+        }
+        });
+
+        // Asegurarse de que los controles de video no se muestren
+        document.getElementById('videoElement').controls = false;
+    </script>
 </body>
 </html>
