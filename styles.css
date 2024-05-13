@@ -2,7 +2,7 @@ html, body {
     position: relative; /* Establece la posición relativa para un mejor control */
     overflow: hidden; /* Impide el desplazamiento */
     width: 100%; /* Asegura que no se desborde en anchura */
-    height: 100%; /* Asegura que no se desborde en altura */
+    height: 100vh; /* Asegura que no se desborde en altura */
     max-height: 100vh; /* Limita la altura máxima al 100% del viewport */
     margin: 0;
     padding: 0;
@@ -15,24 +15,34 @@ html, body {
     width: 100%; /* Asegura que el contenedor no desborde en anchura */
     height: 100%; /* Ajusta la altura al contenedor del body */
     max-height: 100vh; /* Limita la altura máxima al 100% del viewport */
-    overflow: hidden; /* Impide el desplazamiento dentro del contenedor */
     padding: 0;
     margin: 0 auto;
 }
 
+.w-100 {
+    padding-top: 0;
+    max-height: 430px;
+}
+
 .video-wrapper {
     position: relative;
-    width: 60%;
-    max-width: 800px; /* Limita el tamaño máximo del video */
-    aspect-ratio: 16 / 9; /* Mantiene la proporción del video */
-    margin: auto;
-    border-radius: 30px;
+    width: 80%; /* Ajusta el ancho al 100% en dispositivos móviles */
+    padding-top: 56.25%; /* Aspect ratio para 16:9 */
+    overflow: hidden; /* Asegúrate de que no haya desbordamiento */
+    max-width: 640px;
+    max-height: 480px;
+    border-radius: 25px;
 }
 
 .video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    border-radius: 30px;
+    height: 100%;
+    max-width: 640px;
+    max-height: 480px;
+    border-radius: 25px;
 }
 
 .play-button {
@@ -41,6 +51,8 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
+    max-width: 640px;
+    max-height: 480px;
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -57,27 +69,39 @@ html, body {
     max-height: 128px;
     background: url('play-icon.png') no-repeat center center;
     background-size: contain;
+    z-index: 3;
 }
 
 .play-button.hide-icon::before {
     content: none;
 }
 
+.footer { 
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Centra el botón verticalmente */
+    padding: 20px; /* Espacio alrededor del botón para no tocar los bordes */
+    max-width: 100%; /* Evita que el contenedor sea más ancho que la pantalla */
+}
+
+
 .instagram-button {
-    padding: 15px 50px; /* Aumentamos el padding para hacer el botón más grande */
-    font-size: 20px; /* Aumentamos la fuente para mejorar la legibilidad */
-    background: linear-gradient(135deg, #FF5733, #FFC300); /* Gradiente de naranja a amarillo */
+    padding: 15px 50px; /* Dimensiones del botón */
+    font-size: 20px;
+    background: linear-gradient(135deg, #FF5733, #FFC300);
     color: white;
-    border-radius: 15px; /* Borde más redondeado */
-    border: none; /* Eliminamos el borde para un look más moderno */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Agregamos una transición suave */
-    margin: 5px;
+    border-radius: 15px;
+    border: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase; /* Opcional: Texto en mayúsculas para más impacto */
+    width: auto; /* Ajusta el ancho según el contenido */
+    max-width: 90%; /* No permite que el botón sea más ancho que el 90% del contenedor */
 }
 
 .instagram-button:hover {
-    box-shadow: 0 0 25px 3px rgba(255, 140, 0, 0.8); /* Sombra más prominente y colorida al pasar el ratón */
-    transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón */
-    background: linear-gradient(135deg, #FFC300, #FF5733); /* Invertimos el gradiente para el efecto hover */
+    box-shadow: 0 0 25px 3px rgba(255, 140, 0, 0.8);
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #FFC300, #FF5733);
 }
 
 /* Estilos base para logo y encabezado */
@@ -96,12 +120,17 @@ html, body {
     margin-top: 1rem; /* Espacio arriba del eslogan */
 }
 
+.w-100 {
+    margin-top: -3%;
+}
+
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     html, body {
-        height: 80vh;
-        min-height: 80vh;
+        height: 100vh;
+        min-height: 100vh;
     }
+    
     
     .header {
         margin-bottom: 1rem; /* Reducimos el margen inferior en móviles */
