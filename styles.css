@@ -97,6 +97,20 @@ html, body {
     position: relative;
 }
 
+.videos-button {
+    padding: 7px 25px; /* Dimensiones del botón */
+    font-size: 10px;
+    background: linear-gradient(135deg, #FF5733, #FFC300);
+    color: white;
+    border-radius: 15px;
+    border: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: auto; /* Ajusta el ancho según el contenido */
+    max-width: 90%; /* No permite que el botón sea más ancho que el 90% del contenedor */
+    z-index: 5;
+    position: relative;
+}
+
 .instagram-button:hover {
     box-shadow: 0 0 25px 3px rgba(255, 140, 0, 0.8);
     transform: scale(1.05);
